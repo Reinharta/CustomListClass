@@ -8,6 +8,14 @@ namespace CustomListClass
 {
     public class CustomList<T>
     {
+        public T[] array;
+        int capacity;
+
+        public CustomList()
+        {
+            capacity = 5;
+            array = new T[capacity];
+        }
 
         public void Add (T value)
         {

@@ -12,11 +12,14 @@ namespace CustomListClassTest
         {
             //ARRANGE
             CustomList<string> list = new CustomList<string>();
+            string value = "test";
 
             //ACT
-
+            list.Add(value);
 
             //ASSERT
+            
         }
+
     }
 }
