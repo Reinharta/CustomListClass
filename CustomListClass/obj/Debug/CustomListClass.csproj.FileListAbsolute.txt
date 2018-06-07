@@ -1,0 +1,7 @@
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe.config
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.pdb
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csprojResolveAssemblyReference.cache
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csproj.CoreCompileInputs.cache
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.exe
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.pdb

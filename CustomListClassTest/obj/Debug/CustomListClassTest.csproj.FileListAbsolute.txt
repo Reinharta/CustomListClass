@@ -1,0 +1,17 @@
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\CustomListClassTest.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\CustomListClassTest.pdb
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\CustomListClass.exe
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\CustomListClass.pdb
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\CustomListClass.exe.config
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\obj\Debug\CustomListClassTest.csprojResolveAssemblyReference.cache
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\obj\Debug\CustomListClassTest.csproj.CoreCompileInputs.cache
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\obj\Debug\CustomListClassTest.csproj.CopyComplete
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\obj\Debug\CustomListClassTest.dll
+C:\Users\Anina\Desktop\VSProjects\CustomListClass\CustomListClassTest\obj\Debug\CustomListClassTest.pdb
