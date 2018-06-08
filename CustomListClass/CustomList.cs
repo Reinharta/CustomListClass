@@ -26,16 +26,24 @@ namespace CustomListClass
             get
             {
                 if (index >= 0 && index <= (capacity - 1))
+                {
+                    return myArray[index];
+                }
+                else
+                {
                     throw new IndexOutOfRangeException("Index out of range");
-
-                return myArray[index];
+                }
             }
             set
             {
                 if (index >= 0 && index <= (capacity - 1))
+                {
+                    myArray[index] = value;
+                }
+                else
+                {
                     throw new IndexOutOfRangeException("Index out of range");
-
-                myArray[index] = value;
+                }
             }
         }
         public IEnumerator<T> GetEnumerator()
@@ -45,35 +53,36 @@ namespace CustomListClass
 
         public void Add (T value)
         {
-            for (int i = 0; i < capacity; i++)
+            myArray[count] = value;
+            count++;
+            MaintainCapacity();
+        }
+        public void Remove(T value)
+        {
+            for (int i = 0; i <= count; i++)
             {
-                if(EqualityComparer<T>.Default.Equals(myArray[i], default(T)))
+                if(myArray[i].Equals(value))
                 {
-                    myArray[i] = value;
-                    count++;
-                    break;
+                    for (int j = 0; j <= count; i++)  //issue: will shift ALL indexes, even those before removed item
+                    {
+                        myArray[j] = myArray[j++];
+                    }
+                    //myArray[i] = default(T);
+                    count--;
                 }
             }
+            
             MaintainCapacity();
         }
 
         private void MaintainCapacity()
         {
             if (count == (capacity * 0.6))
-            {
-                capacity = (capacity * 2);
-            }
-            if (capacity > 5 && count <= (capacity * 0.4))
-            {
-                capacity = (capacity / 2);
-            }
+                {capacity = (capacity * 2); }
+            if (capacity > 5 && count < (capacity * 0.3))
+                {capacity = (capacity / 2);}
         }
 
-        public void Remove (T value)
-        {
-
-            MaintainCapacity();
-        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {

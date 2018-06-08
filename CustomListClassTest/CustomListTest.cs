@@ -92,8 +92,73 @@ namespace CustomListClassTest
         }
 
 
-
+    
         //REMOVE METHOD
 
+        [TestMethod]
+        public void RemoveIntCheckIndex()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            int removedValue = 3;
+            int expectedResult = default(int);
+
+            //ACT
+            list.Remove(removedValue);
+            int actualResult = list[2];
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void RemoveIntCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            int removedValue = 3;
+            int expectedResult = 2;
+
+            //ACT
+            list.Remove(removedValue);
+            int actualResult = list.count;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void RemoveMultipleIntCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int removedValueOne = 4;
+            int removedValueTwo = 2;
+            int expectedResult = 2;
+
+            //ACT
+            list.Remove(removedValueOne);
+            list.Remove(removedValueTwo);
+            int actualResult = list.count;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void RemoveMultipleDecreaseCapacity()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            int removedValue = 3;
+            int expectedResult = 5;
+
+            //ACT
+            list.Remove(removedValue);
+            int actualResult = list.capacity;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
