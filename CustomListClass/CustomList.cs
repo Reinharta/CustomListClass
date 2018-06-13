@@ -9,9 +9,23 @@ namespace CustomListClass
 {
     public class CustomList<T> : IEnumerable<T>
     {
-        public T[] myArray;
-        public int capacity;
-        public int count;
+        private T[] myArray;
+        private int capacity;
+        private int count;
+
+        public T[] MyArray
+        {
+            get { return myArray; }
+            set { myArray = value; }
+        }
+        public int Capacity
+        {
+            get { return capacity; }
+        }
+        public int Count
+        {
+            get { return count; }
+        }
 
         public CustomList()
         {
@@ -63,11 +77,12 @@ namespace CustomListClass
             {
                 if(myArray[i].Equals(value))
                 {
-                    for (int j = 0; j <= count; i++)  //issue: will shift ALL indexes, even those before removed item
+                    for (int j = i; j < count; j++)  
                     {
-                        myArray[j] = myArray[j++];
+                        int nextIndex = (j + 1);
+                        myArray[j] = myArray[nextIndex];
                     }
-                    //myArray[i] = default(T);
+                    myArray[count] = default(T);
                     count--;
                 }
             }

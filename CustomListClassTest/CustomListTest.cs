@@ -85,7 +85,7 @@ namespace CustomListClassTest
             //ACT
             list.Add(valueOne);
             list.Add(valueTwo);
-            int actualResult = list.capacity;
+            int actualResult = list.Capacity;
 
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
@@ -121,7 +121,7 @@ namespace CustomListClassTest
 
             //ACT
             list.Remove(removedValue);
-            int actualResult = list.count;
+            int actualResult = list.Count;
 
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
@@ -139,7 +139,7 @@ namespace CustomListClassTest
             //ACT
             list.Remove(removedValueOne);
             list.Remove(removedValueTwo);
-            int actualResult = list.count;
+            int actualResult = list.Count;
 
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
@@ -155,7 +155,7 @@ namespace CustomListClassTest
 
             //ACT
             list.Remove(removedValue);
-            int actualResult = list.capacity;
+            int actualResult = list.Capacity;
 
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
