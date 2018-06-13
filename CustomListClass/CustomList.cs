@@ -77,17 +77,23 @@ namespace CustomListClass
             {
                 if(myArray[i].Equals(value))
                 {
-                    for (int j = i; j < count; j++)  
+                    for (int j = i; j < count; j++)  // run in program to see and make sure works as expected
                     {
                         int nextIndex = (j + 1);
                         myArray[j] = myArray[nextIndex];
                     }
-                    myArray[count] = default(T);
+                    myArray[count] = default(T); 
                     count--;
                 }
-            }
-            
+            }            
             MaintainCapacity();
+        }
+
+        public override string ToString()
+        {
+            string resultString = ""; //placeholder
+
+            return resultString;
         }
 
         private void MaintainCapacity()

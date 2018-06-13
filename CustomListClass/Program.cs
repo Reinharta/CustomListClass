@@ -10,8 +10,10 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
-            CustomList<string> list = new CustomList<string>();
-            list.Add("test");
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
+            list.Remove(3);
+            //foreach in list (Console.WriteLine()) 
+            
         }
     }
 }

@@ -160,5 +160,35 @@ namespace CustomListClassTest
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        //TOSTRING METHOD
+
+        [TestMethod]
+        public void StringifyCheckIndexValue()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            int expectedResult = 3;     //index based on counting spaces and commas
+
+            //ACT
+            string stringResult = list.ToString();
+            int actualResult = stringResult.IndexOf("2");
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        public void StringifyCheckLength()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            int expectedResult = 7; //this includes spaces and commas, not sure if these are actually counted w/ length
+
+            //ACT
+            string stringResult = list.ToString();
+            int actualResult = stringResult.Length;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
