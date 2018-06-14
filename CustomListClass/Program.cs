@@ -11,8 +11,16 @@ namespace CustomListClass
         static void Main(string[] args)
         {
             CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
-            list.Remove(3);
-            //foreach in list (Console.WriteLine()) 
+
+            foreach (int value in list)
+            {
+                Console.WriteLine(value);
+            }
+            Console.ReadKey();
+
+            Console.WriteLine(list.ToString());
+            Console.ReadKey();
+            
             
         }
     }

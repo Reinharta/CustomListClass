@@ -31,8 +31,8 @@ namespace CustomListClass
         {
             capacity = 5;
             myArray = new T[capacity];
-            for (int i = 0; i < capacity; i++)
-                myArray[i] = default(T);
+            //for (int i = 0; i < capacity; i++)
+            //    myArray[i] = default(T);
         }
 
         public T this [int index]
@@ -62,27 +62,43 @@ namespace CustomListClass
         }
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            //foreach (T value in MyArray)
+            //{
+            //    if (value.Equals(default(T)))
+            //    {
+            //        break;
+            //    }
+            //    yield return value;
+            //}
+
+            for (int i = 0; i < count; i++)
+            {
+                yield return myArray[i];
+            }
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
 
-        public void Add (T value)
+        public void Add (T value) //consider using temporary array here
         {
             myArray[count] = value;
             count++;
             MaintainCapacity();
         }
-        public void Remove(T value)
+        public void Remove(T value)  //consider using temporary array here
         {
             for (int i = 0; i <= count; i++)
             {
                 if(myArray[i].Equals(value))
                 {
-                    for (int j = i; j < count; j++)  // run in program to see and make sure works as expected
+                    for (int j = i; j < (count - 1); j++)  
                     {
                         int nextIndex = (j + 1);
                         myArray[j] = myArray[nextIndex];
                     }
-                    myArray[count] = default(T); 
+                    myArray[count - 1] = default(T); 
                     count--;
                 }
             }            
@@ -91,9 +107,24 @@ namespace CustomListClass
 
         public override string ToString()
         {
-            string resultString = ""; //placeholder
+            StringBuilder builder = new StringBuilder();
+            for (int k = 0; k < (count - 1); k++)
+            {
+                builder.Append(myArray[k]).Append(", ");
+            }
+            builder.Append(myArray[count - 1]);
+            string arrayAsString = builder.ToString();
+            return arrayAsString;
+        }
 
-            return resultString;
+        public static CustomList<T> operator + (CustomList<T> listOne, CustomList<T> listTwo)
+        {
+
+        }
+
+        public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
+        {
+
         }
 
         private void MaintainCapacity()
@@ -105,9 +136,6 @@ namespace CustomListClass
         }
 
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

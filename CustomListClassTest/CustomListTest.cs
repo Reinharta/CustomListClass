@@ -161,6 +161,8 @@ namespace CustomListClassTest
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+
+
         //TOSTRING METHOD
 
         [TestMethod]
@@ -168,6 +170,7 @@ namespace CustomListClassTest
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+
             int expectedResult = 3;     //index based on counting spaces and commas
 
             //ACT
@@ -177,6 +180,8 @@ namespace CustomListClassTest
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestMethod]
         public void StringifyCheckLength()
         {
             //ARRANGE
@@ -186,6 +191,127 @@ namespace CustomListClassTest
             //ACT
             string stringResult = list.ToString();
             int actualResult = stringResult.Length;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void StringifyCheckStringOutput()
+        {
+            //ARRANGE
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            string expectedResult = "1, 2, 3";
+
+            //ACT
+            string actualResult = list.ToString();
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
+
+        //PLUS OVERLOAD             //check for indexOutOfRange exception?
+
+        [TestMethod]
+        public void AddTwoListsCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
+            CustomList<int> listTwo = new CustomList<int> { 4, 5, 6 };
+            int expectedResult = 6;
+
+            //ACT
+            CustomList<int> newList = listOne + listTwo;
+            int actualResult = newList.Count;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void AddTwoListsCheckIndexValue()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
+            CustomList<int> listTwo = new CustomList<int> { 4, 5, 6 };
+            int expectedResult = 4;
+
+            //ACT
+            CustomList<int> newList = listOne + listTwo;
+            int actualResult = newList[3];
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void AddThreeListsCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
+            CustomList<int> listTwo = new CustomList<int> { 4, 5, 6 };
+            CustomList<int> listThree = new CustomList<int> { 7, 8 };
+            int expectedResult = 8;
+
+            //ACT
+            CustomList<int> newList = (listOne + listTwo) + listThree;
+            int actualResult = newList.Count;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+
+        }
+
+
+
+        //MINUS OVERLOAD            //check for indexOutOfRange exception?
+
+        [TestMethod]
+        public void SubtractValuesCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 2, 3, 4, 5, 6, 7 };
+            CustomList<int> listTwo = new CustomList<int> { 1, 4, 7, 9 };
+            int expectedResult = 4;
+
+            //ACT
+            CustomList<int> newList = listOne - listTwo;
+            int actualResult = newList.Count;
+
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void SubtractValuesCheckIndexValue()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 2, 3, 4, 5 };
+            CustomList<int> listTwo = new CustomList<int> { 2, 3 };
+            int expectedResult = 4;
+
+            //ACT
+            CustomList<int> newList = listOne - listTwo;
+            int actualResult = newList[1];
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void SubtractNoValuesCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
+            CustomList<int> listTwo = new CustomList<int> { 4, 5, 6 };
+            int expectedResult = 3;
+
+            //ACT
+            CustomList<int> newList = listOne - listTwo;
+            int actualResult = newList.Count;
 
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
