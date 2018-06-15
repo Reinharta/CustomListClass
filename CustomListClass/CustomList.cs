@@ -30,9 +30,12 @@ namespace CustomListClass
         public CustomList()
         {
             capacity = 5;
-            myArray = new T[capacity];
-            //for (int i = 0; i < capacity; i++)
-            //    myArray[i] = default(T);
+            myArray = new T[Capacity];
+        }
+        public CustomList(int capacity)
+        {
+            this.capacity = capacity;
+            myArray = new T[Capacity];
         }
 
         public T this [int index]
@@ -102,7 +105,7 @@ namespace CustomListClass
                     count--;
                 }
             }            
-            MaintainCapacity();
+            MaintainCapacity(MyArray);
         }
 
         public override string ToString()
@@ -119,20 +122,58 @@ namespace CustomListClass
 
         public static CustomList<T> operator + (CustomList<T> listOne, CustomList<T> listTwo)
         {
-
+            //int listOneCount = listOne.Count;
+            CustomList<T> combinedList = new CustomList<T>();
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                combinedList.Add(listOne[i]);
+                combinedList.Add(listTwo[i]);
+            }
+            return combinedList;
         }
 
         public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
         {
+            CustomList<T> reducedList = new CustomList<T>();
 
+            return reducedList;
         }
 
-        private void MaintainCapacity()
+        public CustomList<T> Zip(CustomList<T> listTwo)
+        {
+            CustomList<T> zippedList = new CustomList<T>();
+
+            return zippedList;
+        }
+
+        //public T Sort()
+        //{
+
+        //}
+
+        private CustomList<T> MaintainCapacity(CustomList<T> list)
         {
             if (count == (capacity * 0.6))
-                {capacity = (capacity * 2); }
+            {
+                capacity = (capacity * 2);
+                CustomList<T> biggerList = new CustomList<T>(capacity);
+                foreach (T value in list)
+                {
+
+                }
+                return biggerList;
+
+            }
             if (capacity > 5 && count < (capacity * 0.3))
-                {capacity = (capacity / 2);}
+            {
+                capacity = (capacity / 2);
+                CustomList<T> smallerList = new CustomList<T>(capacity);
+                return smallerList;
+            }
+            else
+            {
+                return list;
+            }
         }
 
 

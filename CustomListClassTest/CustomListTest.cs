@@ -212,7 +212,7 @@ namespace CustomListClassTest
 
 
 
-        //PLUS OVERLOAD             //check for indexOutOfRange exception?
+        //PLUS OVERLOAD          
 
         [TestMethod]
         public void AddTwoListsCheckCount()
@@ -266,7 +266,7 @@ namespace CustomListClassTest
 
 
 
-        //MINUS OVERLOAD            //check for indexOutOfRange exception?
+        //MINUS OVERLOAD            
 
         [TestMethod]
         public void SubtractValuesCheckCount()
@@ -312,9 +312,82 @@ namespace CustomListClassTest
             //ACT
             CustomList<int> newList = listOne - listTwo;
             int actualResult = newList.Count;
+            
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
+        //ZIP METHOD
+
+        [TestMethod]
+        public void ZipListsEqualLengthCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 5 };
+            CustomList<int> listTwo = new CustomList<int> { 2, 4, 6 };
+            int expectedResult = 6;
+
+            //ACT
+            CustomList<int> zipList = listOne.Zip(listTwo);
+            int actualResult = zipList.Count;
 
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestMethod]
+        public void ZipListsEqualLengthCheckIndex()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 5 };
+            CustomList<int> listTwo = new CustomList<int> { 2, 4, 6 };
+            int expectedResult = 4;
+
+            //ACT
+            CustomList<int> zipList = listOne.Zip(listTwo);
+            int actualResult = zipList[3];
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void ZipListsFirstShorterCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 3 };
+            CustomList<int> listTwo = new CustomList<int> { 2, 4, 6 };
+            int expectedResult = 4;
+
+            //ACT
+            CustomList<int> zipList = listOne.Zip(listTwo);
+            int actualResult = zipList.Count;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void ZipListsSecondShorterCheckCount()
+        {
+            //ARRANGE
+            CustomList<int> listOne = new CustomList<int> { 1, 3, 5 };
+            CustomList<int> listTwo = new CustomList<int> { 2, 4 };
+            int expectedResult = 5;
+
+            //ACT
+            CustomList<int> zipList = listOne.Zip(listTwo);
+            int actualResult = zipList.Count;
+
+            //ASSERT
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
+        //SORT METHOD
+
+        //[TestMethod]
+
     }
 }
