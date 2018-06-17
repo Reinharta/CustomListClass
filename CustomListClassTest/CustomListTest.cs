@@ -9,7 +9,7 @@ namespace CustomListClassTest
     {
         //ADD METHOD
         [TestMethod]
-        public void AddStringValueToList()
+        public void Add_String_Value_Check_Index()
         {
             //ARRANGE
             CustomList<string> list = new CustomList<string>();
@@ -24,7 +24,7 @@ namespace CustomListClassTest
         }
         
         [TestMethod]
-        public void AddMultIntValuesToList()
+        public void Add_Mult_Int_Values_Check_Index()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>();
@@ -43,7 +43,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void AddIntToExistingList()
+        public void Add_Int_To_Prepopulated_Check_Index()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -58,7 +58,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void AddListAsListValue()
+        public void Add_List_As_Value_Check_Index()
         {
             //ARRANGE
             CustomList<CustomList<string>> parentList = new CustomList<CustomList<string>>();
@@ -74,7 +74,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void AddValuesDoubleCapacity()
+        public void Add_Values_Check_Capacity_Doubled()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2 };
@@ -96,7 +96,7 @@ namespace CustomListClassTest
         //REMOVE METHOD
 
         [TestMethod]
-        public void RemoveIntCheckIndex()
+        public void Remove_Int_Check_Index()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -112,7 +112,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void RemoveIntCheckCount()
+        public void Remove_Int_Check_Count()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -128,7 +128,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void RemoveMultipleIntCheckCount()
+        public void Remove_Multiple_Int_Check_Count()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
@@ -146,7 +146,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void RemoveMultipleDecreaseCapacity()
+        public void Remove_Multiple_Decrease_Capacity()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -166,7 +166,7 @@ namespace CustomListClassTest
         //TOSTRING METHOD
 
         [TestMethod]
-        public void StringifyCheckIndexValue()
+        public void Stringify_Check_Index_Value()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -182,7 +182,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void StringifyCheckLength()
+        public void Stringify_Check_Length()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -197,7 +197,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void StringifyCheckStringOutput()
+        public void Stringify_Check_String_Output()
         {
             //ARRANGE
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
@@ -215,7 +215,7 @@ namespace CustomListClassTest
         //PLUS OVERLOAD          
 
         [TestMethod]
-        public void AddTwoListsCheckCount()
+        public void Add_Two_Lists_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
@@ -231,7 +231,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void AddTwoListsCheckIndexValue()
+        public void Add_Two_Lists_Check_Index_Value()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
@@ -247,7 +247,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void AddThreeListsCheckCount()
+        public void Add_Three_Lists_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
@@ -269,7 +269,7 @@ namespace CustomListClassTest
         //MINUS OVERLOAD            
 
         [TestMethod]
-        public void SubtractValuesCheckCount()
+        public void Subtract_Values_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 2, 3, 4, 5, 6, 7 };
@@ -286,7 +286,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void SubtractValuesCheckIndexValue()
+        public void Subtract_Values_Check_Index_Value()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 2, 3, 4, 5 };
@@ -302,7 +302,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void SubtractNoValuesCheckCount()
+        public void Subtract_No_Values_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 2, 3 };
@@ -321,7 +321,7 @@ namespace CustomListClassTest
         //ZIP METHOD
 
         [TestMethod]
-        public void ZipListsEqualLengthCheckCount()
+        public void Zip_Lists_Equal_Length_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 3, 5 };
@@ -337,7 +337,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void ZipListsEqualLengthCheckIndex()
+        public void Zip_Lists_Equal_Length_Check_Index()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 3, 5 };
@@ -353,7 +353,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void ZipListsFirstShorterCheckCount()
+        public void Zip_Lists_First_Shorter_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 3 };
@@ -369,7 +369,7 @@ namespace CustomListClassTest
         }
 
         [TestMethod]
-        public void ZipListsSecondShorterCheckCount()
+        public void Zip_Lists_Second_Shorter_Check_Count()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int> { 1, 3, 5 };
@@ -383,11 +383,5 @@ namespace CustomListClassTest
             //ASSERT
             Assert.AreEqual(expectedResult, actualResult);
         }
-
-
-        //SORT METHOD
-
-        //[TestMethod]
-
     }
 }

@@ -10,6 +10,7 @@ namespace CustomListClass
     public class CustomList<T> : IEnumerable<T>
     {
         private T[] myArray;
+        private T[] tempArray;
         private int capacity;
         private int count;
 
@@ -65,15 +66,6 @@ namespace CustomListClass
         }
         public IEnumerator<T> GetEnumerator()
         {
-            //foreach (T value in MyArray)
-            //{
-            //    if (value.Equals(default(T)))
-            //    {
-            //        break;
-            //    }
-            //    yield return value;
-            //}
-
             for (int i = 0; i < count; i++)
             {
                 yield return myArray[i];
@@ -84,13 +76,14 @@ namespace CustomListClass
             return this.GetEnumerator();
         }
 
-        public void Add (T value) //consider using temporary array here
+        public void Add (T value) 
         {
             myArray[count] = value;
             count++;
-            MaintainCapacity();
+            MaintainCapacity(MyArray);
         }
-        public void Remove(T value)  //consider using temporary array here
+
+        public void Remove(T value) 
         {
             for (int i = 0; i <= count; i++)
             {
@@ -122,61 +115,73 @@ namespace CustomListClass
 
         public static CustomList<T> operator + (CustomList<T> listOne, CustomList<T> listTwo)
         {
-            //int listOneCount = listOne.Count;
             CustomList<T> combinedList = new CustomList<T>();
             for (int i = 0; i < listOne.Count; i++)
             {
                 combinedList.Add(listOne[i]);
-                combinedList.Add(listTwo[i]);
+            }
+            for (int j = 0; j < listTwo.Count; j++)
+            {
+                combinedList.Add(listTwo[j]);
             }
             return combinedList;
         }
 
         public static CustomList<T> operator - (CustomList<T> listOne, CustomList<T> listTwo)
         {
-            CustomList<T> reducedList = new CustomList<T>();
-
-            return reducedList;
+            for (int i = 0; i < listTwo.Count; i++)
+            {
+                for (int j = 0; j < listOne.Count; j++)
+                {
+                    if (listOne[j].Equals(listTwo[i]))
+                    {
+                        listOne.Remove(listTwo[i]);
+                    }
+                }
+            }
+            return listOne;
         }
 
         public CustomList<T> Zip(CustomList<T> listTwo)
         {
             CustomList<T> zippedList = new CustomList<T>();
-
+            for (int i = 0; i < this.count; i++)
+            {
+                zippedList.Add(this[i]);
+                if (listTwo[i].Equals(default(T)))
+                {
+                    return zippedList;
+                }
+                else
+                {
+                    zippedList.Add(listTwo[i]);
+                }
+            }
             return zippedList;
         }
 
-        //public T Sort()
-        //{
-
-        //}
-
-        private CustomList<T> MaintainCapacity(CustomList<T> list)
+        private void MaintainCapacity(T[] list)
         {
             if (count == (capacity * 0.6))
             {
                 capacity = (capacity * 2);
-                CustomList<T> biggerList = new CustomList<T>(capacity);
-                foreach (T value in list)
+                tempArray = new T[capacity];
+                for (int i = 0; i <= count; i++)
                 {
-
+                    tempArray[i] = list[i];
                 }
-                return biggerList;
-
+                MyArray = tempArray;
             }
             if (capacity > 5 && count < (capacity * 0.3))
             {
                 capacity = (capacity / 2);
-                CustomList<T> smallerList = new CustomList<T>(capacity);
-                return smallerList;
-            }
-            else
-            {
-                return list;
+                tempArray = new T[capacity];
+                for (int i = 0; i <= count; i++)
+                {
+                    tempArray[i] = list[i];
+                }
+                MyArray = tempArray;
             }
         }
-
-
-
     }
 }
